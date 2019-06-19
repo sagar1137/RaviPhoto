@@ -7,12 +7,16 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:id="@+id/rel">
+    >
+
 
     <FrameLayout
+
+        android:id="@+id/sceen_Area"
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/sceen_Area">
+        android:layout_height="match_parent">
+
     </FrameLayout>
 
 
