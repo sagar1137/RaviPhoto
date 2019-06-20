@@ -49,11 +49,11 @@ public class Home_Frag extends Fragment {
                    startActivity(intent);
                 }
                 if (position == 1) {
-                    Intent intent=new Intent(getContext(),Child_Activity.class);
+                    Intent intent=new Intent(getContext(),Wedding_Activity.class);
                     startActivity(intent);
                 }
                 if (position == 2) {
-                    Intent intent=new Intent(getContext(),Wedding_Activity.class);
+                    Intent intent=new Intent(getContext(),Child_Activity.class);
                     startActivity(intent);
                 }
                 if (position == 3) {
@@ -61,7 +61,7 @@ public class Home_Frag extends Fragment {
                     startActivity(intent);
                 }
                 if (position == 4) {
-                    Intent intent=new Intent(getContext(),TableTop_Activity.class);
+                    Intent intent=new Intent(getContext(),Table_Activity.class);
                     startActivity(intent);
                 }
             }

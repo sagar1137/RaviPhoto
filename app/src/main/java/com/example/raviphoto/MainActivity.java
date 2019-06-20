@@ -1,5 +1,6 @@
 package com.example.raviphoto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -68,8 +69,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_Exit) {
+            System.exit(0);
         }
 
         return super.onOptionsItemSelected(item);
@@ -88,8 +89,11 @@ public class MainActivity extends AppCompatActivity
             fragment=new OurTeam_Frag();
 
         } else if (id == R.id.nav_share) {
-            fragment=new Share_frag();
-
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT,"Share this app");
+            intent.setType("text/plain");
+            startActivity(Intent.createChooser(intent,"Share Via"));
         } else if (id == R.id.aboutus) {
             fragment=new About_Frag();
         }

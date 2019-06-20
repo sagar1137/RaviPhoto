@@ -14,20 +14,18 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Timer;
+
 public class Splash_Screen extends AppCompatActivity {
-   // FirebaseDatabase firebaseDatabase;
-   // DatabaseReference reference;
+    Timer run=new Timer();
     ImageView imageView;
     Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //FirebaseApp.initializeApp(this);
 
         setContentView(R.layout.activity_splash__screen);
 
-     //   firebaseDatabase= FirebaseDatabase.getInstance();
-     //   reference=firebaseDatabase.getReference("Data");
         //changing status bar
         Window window=this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

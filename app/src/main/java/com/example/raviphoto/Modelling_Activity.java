@@ -1,17 +1,24 @@
 package com.example.raviphoto;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.ProgressBar;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Modelling_Activity extends AppCompatActivity {
+     ProgressDialog progressBar;
+
     RecyclerView recyclerView;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
@@ -34,6 +41,11 @@ public class Modelling_Activity extends AppCompatActivity {
 
        firebaseDatabase=FirebaseDatabase.getInstance();
        reference=firebaseDatabase.getReference("Data");
+
+
+
+
+
     }
 
     //load data into recycler view  onstart
@@ -41,6 +53,23 @@ public class Modelling_Activity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        progressBar = new ProgressDialog(Modelling_Activity.this);
+        progressBar.setTitle("Loading");
+        progressBar.setMessage("Please wait,while we Load new Images For you :)");
+        progressBar.show();
+        Runnable progressRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                progressBar.cancel();
+            }
+        };
+
+        Handler pdCanceller = new Handler();
+        pdCanceller.postDelayed(progressRunnable, 5000);
+
+
         FirebaseRecyclerAdapter<Model,ViewHolder> modelViewHolderFirebaseRecyclerAdapter=
                 new FirebaseRecyclerAdapter<Model, ViewHolder>(Model.class,R.layout.row,ViewHolder.class,reference) {
                     @Override
