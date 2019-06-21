@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp">
 
-    <Button
-        android:id="@+id/button4"
+<com.mikhaellopez.circularimageview.CircularImageView
+    android:layout_width="150dp"
+    android:layout_height="160dp"
+    android:src="@drawable/sagar1"
+    app:civ_border_color="@color/black"
+    app:civ_shadow="true"
+    app:civ_shadow_radius="10"
+    app:civ_shadow_color="@color/white"
+    />
+
+
+    <TextView
+
+        android:text="Sagar Patil"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button4"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/fb"
+        android:layout_marginTop="30dp"
+        android:text="FACEBOOK"
+        android:textStyle="bold"
+        android:background="@drawable/circle"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/insta1"
+        android:text="INSTAGRAM"
+        android:textStyle="bold"
+        android:background="@drawable/insta"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

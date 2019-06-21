@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
       fragment=null;
 
-        if (id == R.id.home) {
+        if (id == R.id.category) {
             fragment = new Home_Frag();
         } else if (id == R.id.ourteam) {
             fragment=new OurTeam_Frag();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra(Intent.EXTRA_TEXT,"Share this app");
             intent.setType("text/plain");
             startActivity(Intent.createChooser(intent,"Share Via"));
-        } else if (id == R.id.aboutus) {
+        } else if (id == R.id.aboutdev) {
             fragment=new About_Frag();
         }
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="5dp">
 
     <ImageView
         android:layout_width="match_parent"
@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:text="MODELLING"
         android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:layout_margin="20dp"
         android:id="@+id/tv1"/>

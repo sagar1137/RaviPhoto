@@ -26,8 +26,8 @@ import java.util.List;
 public class Home_Frag extends Fragment {
     ListView listView;
     Fragment fragment = null;
-    static int images[] = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground, R.drawable.children, R.drawable.male, R.drawable.wedding};
-    static String title[] = {"MODEELING", "WEDDING", "CHILD", "WILDLIFE", "TABLE TOP"};
+    static int images[] = {R.drawable.male, R.drawable.wedding, R.drawable.children, R.drawable.wildlife, R.drawable.tabletop};
+    static String title[] = {"MODELLING", "WEDDING", "CHILD", "WILDLIFE", "TABLE TOP"};
 
     @Nullable
     @Override
