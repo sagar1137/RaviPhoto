@@ -36,7 +36,7 @@ public class Child_Activity extends AppCompatActivity {
         //send query to firebase
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        reference=firebaseDatabase.getReference("Child_data");
+        reference=firebaseDatabase.getReference("child");
 
 
         progressBar=new ProgressDialog(Child_Activity.this);
@@ -82,6 +82,8 @@ public class Child_Activity extends AppCompatActivity {
                                 Intent intent=new Intent(view.getContext(),PostDetailActivity.class);
                                 intent.putExtra("image",mImage);
                                 startActivity(intent);
+                                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
                             }
 
                         });

@@ -83,6 +83,8 @@ public class Wedding_Activity extends AppCompatActivity {
                                 Intent intent=new Intent(view.getContext(),PostDetailActivity.class);
                                 intent.putExtra("image",mImage);
                                 startActivity(intent);
+                                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
                             }
 
                         });
