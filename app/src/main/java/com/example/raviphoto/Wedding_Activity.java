@@ -1,12 +1,15 @@
 package com.example.raviphoto;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.ViewGroup;
 
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -35,13 +38,6 @@ public class Wedding_Activity extends AppCompatActivity {
 
         firebaseDatabase= FirebaseDatabase.getInstance();
         reference=firebaseDatabase.getReference("Wedding_data");
-    }
-
-    //load data into recycler view  onstart
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         progressBar=new ProgressDialog(Wedding_Activity.this);
         progressBar.setTitle("Loading");
@@ -57,12 +53,41 @@ public class Wedding_Activity extends AppCompatActivity {
 
         Handler pdCanceller = new Handler();
         pdCanceller.postDelayed(progressRunnable, 5000);
+    }
+
+    //load data into recycler view  onstart
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
 
         FirebaseRecyclerAdapter<Model,ViewHolder> modelViewHolderFirebaseRecyclerAdapter=
                 new FirebaseRecyclerAdapter<Model, ViewHolder>(Model.class,R.layout.row,ViewHolder.class,reference) {
                     @Override
                     protected void populateViewHolder(ViewHolder viewHolder, Model model, int position) {
                         viewHolder.setImage(getApplicationContext(),model.getImage());
+                    }
+
+                    @Override
+                    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+                    {
+                        ViewHolder viewHolder=super.onCreateViewHolder(parent,viewType);
+                        viewHolder.setOnClickListener(new ViewHolder.ClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                String mImage=getItem(position).getImage();
+
+                                //pass this data to new activity
+                                Intent intent=new Intent(view.getContext(),PostDetailActivity.class);
+                                intent.putExtra("image",mImage);
+                                startActivity(intent);
+                            }
+
+                        });
+
+                        return viewHolder;
                     }
                 };
 

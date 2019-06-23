@@ -39,7 +39,18 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        if(findViewById(R.id.sceen_Area)!=null)
+        {
+            if(savedInstanceState!=null)
+            {
+                return;
+            }
+            FragmentManager fragmentManager=getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+            Home_Frag home_frag=new Home_Frag();
+            fragmentTransaction.add(R.id.sceen_Area,home_frag,null);
+            fragmentTransaction.commit();
+        }
 
 
     }
@@ -101,7 +112,7 @@ public class MainActivity extends AppCompatActivity
         if(fragment!=null) {
             FragmentManager fragmentManager=getSupportFragmentManager();
             FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.sceen_Area,fragment);
+            fragmentTransaction.replace(R.id.sceen_Area,fragment).addToBackStack(null);
             fragmentTransaction.commit();
         }
 
