@@ -41,7 +41,7 @@ android:id="@+id/card"
             android:layout_marginTop="160dp"
             android:gravity="center"
             android:text="Sambhaji  Patil"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -55,7 +55,7 @@ android:id="@+id/card"
             android:gravity="center"
             android:text="Ravindra  Patil"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold" />
         <ImageView
             android:layout_width="30dp"
