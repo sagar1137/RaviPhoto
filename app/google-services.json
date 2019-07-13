@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "459680516285",
+    "firebase_url": "https://raviphoto2-c97ce.firebaseio.com",
+    "project_id": "raviphoto2-c97ce",
+    "storage_bucket": "raviphoto2-c97ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459680516285:android:243c2ca40c731b5b",
+        "android_client_info": {
+          "package_name": "com.example.raviphoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459680516285-vdkr4185vnnp0h2g7g167kgvd85htdcr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.raviphoto",
+            "certificate_hash": "f3777b6d238fce13c6d2ffc4af8a2e7e4684ad62"
+          }
+        },
+        {
+          "client_id": "459680516285-p869frmalm3r291hpm2saa0b5fu9lhia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHuKRrGukUnZ2YaRu-2Beun5A-_9UuOFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459680516285-p869frmalm3r291hpm2saa0b5fu9lhia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
